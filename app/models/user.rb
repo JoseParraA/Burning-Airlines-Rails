@@ -10,4 +10,5 @@
 #
 
 class User < ApplicationRecord
+  has_many :flights, through :reservations
 end
