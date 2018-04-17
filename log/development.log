@@ -857,3 +857,220 @@ Processing by ReservationsController#show as HTML
 Completed 200 OK in 74ms (Views: 67.7ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-17 20:35:25 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (12.1ms)
+Completed 200 OK in 44ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-04-17 20:35:30 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 88ms (Views: 76.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2018-04-17 20:35:51 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/info" for 127.0.0.1 at 2018-04-17 21:04:40 +1000
+Processing by Rails::InfoController#index as HTML
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-04-17 21:04:40 +1000
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (47.1ms)
+  Rendered /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/actionpack-5.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/info/routes.html.erb within layouts/application (79.4ms)
+Completed 200 OK in 111ms (Views: 98.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reservations" for 127.0.0.1 at 2018-04-17 21:04:41 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 79ms (Views: 69.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2018-04-18 09:14:59 +1000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (5.1ms)
+Completed 200 OK in 33ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 09:15:04 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 332ms (Views: 317.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 09:15:11 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.7ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 47ms (Views: 37.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 09:15:15 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (29.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `plane_id' for #<Flight:0x007fde09f745b0>
+Did you mean?  airplane_id):
+    16:   <tbody>
+    17:     <% @flights.each do |flight| %>
+    18:       <tr>
+    19:         <td><%= flight.plane_id %></td>
+    20:         <td><%= flight.origin %></td>
+    21:         <td><%= flight.destination %></td>
+    22:         <td><%= flight.date %></td>
+  
+app/views/flights/index.html.erb:19:in `block in _app_views_flights_index_html_erb___1644289833766856842_70295838231700'
+app/views/flights/index.html.erb:17:in `_app_views_flights_index_html_erb___1644289833766856842_70295838231700'
+Started GET "/flights" for ::1 at 2018-04-18 09:16:01 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (1.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 70ms (Views: 57.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 09:16:19 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.0ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 103ms (Views: 68.1ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/reservations/1" for ::1 at 2018-04-18 09:16:33 +1000
+Processing by ReservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"srtSQOqviDYjRsW7Pz5RSRELgYEHDXZgAMftLC/8y/zBTO7ju+fZ2oSUVO8R6MQyGV1vC4G1yV09bpxOnDa5+g==", "id"=>"1"}
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 1]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3333/reservations
+Completed 302 Found in 17ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 09:16:33 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations/new" for ::1 at 2018-04-18 09:16:34 +1000
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (34.8ms)
+  Rendered reservations/new.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 76ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 09:16:39 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YhIkAH0/Wmp/Jm+eNdbpF/DmQc4BliGo7xLG+kuQ1pcR5ZijLHcLhtj0/sobAHxs+LCvRIcunpXSu7eY+FqkkQ==", "reservation"=>{"user_id"=>"6", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 6], ["flight_id", 1], ["created_at", "2018-04-17 23:16:39.632907"], ["updated_at", "2018-04-17 23:16:39.632907"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3333/reservations/2
+Completed 302 Found in 30ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/reservations/2" for ::1 at 2018-04-18 09:16:39 +1000
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  Rendered reservations/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 09:21:39 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 97ms (Views: 82.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/new" for ::1 at 2018-04-18 09:21:41 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.5ms)
+  Rendered users/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-04-18 09:21:44 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDk2k6gNKaQtu7HNIrmczm6wYjEAeTecj74u+hc5K+nzzoow+UV4SIppIJkMbwm1ZuaMu4bBiKGyF1+YpPNZ7w==", "user"=>{"name"=>"Jose"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jose"], ["created_at", "2018-04-17 23:21:44.486781"], ["updated_at", "2018-04-17 23:21:44.486781"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3333/users/7
+Completed 302 Found in 26ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/users/7" for ::1 at 2018-04-18 09:21:44 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 39.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 09:21:45 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/7" for ::1 at 2018-04-18 09:21:48 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3GAg33sOCIB/jBOftMgBOfYAlzOlt/puJzk3Qh/Pbp6vl5x8KkZZbNhegsuaHpRC/lZ5uSMPRVMakEYgrAUcmA==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3333/users
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 09:21:48 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
