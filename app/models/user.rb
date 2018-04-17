@@ -10,5 +10,5 @@
 #
 
 class User < ApplicationRecord
-  has_many :flights, through :reservations
+  has_many :flights, :through => :reservations
 end

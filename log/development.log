@@ -223,3 +223,43 @@ Processing by AirplanesController#index as HTML
 Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-17 19:05:31 +1000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/tarynewens/.rvm/gems/ruby-2.4.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 33ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-04-17 19:05:37 +1000
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/tarynewens/Projects/burning_airlines_rails/app/models/user.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+  has_many :flights, through :reservations
+                              ^):
+  
+app/models/user.rb:13: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-04-17 19:07:52 +1000
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/Users/tarynewens/Projects/burning_airlines_rails/app/models/user.rb:13: syntax error, unexpected ':', expecting keyword_end
+ has_many :flights, :through :reservations
+                              ^):
+  
+app/models/user.rb:13: syntax error, unexpected ':', expecting keyword_end
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users" for 127.0.0.1 at 2018-04-17 19:08:08 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 451ms (Views: 430.6ms | ActiveRecord: 2.2ms)
+
+
