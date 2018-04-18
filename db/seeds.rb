@@ -11,7 +11,8 @@ u1 = User.create :name => 'admin', :admin => true
 u2 = User.create :name => 'Sam'
 
 Flight.destroy_all
-f1 = Flight.create :origin => 'Sydney', :destination => 'Brisbane', :date => '2018-04-21'
+f1 = Flight.create :airplane_id => '1', :origin => 'Sydney', :destination => 'Brisbane', :date => '2018-04-21'
 
 Airplane.destroy_all
 a1 = Airplane.create :name => '747', :columns => 20, :rows => 4
+a2 = Airplane.create :name => '121', :columns => 20, :rows => 4

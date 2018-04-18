@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Columns</th>
       <th>Rows</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @airplanes.each do |airplane| %>
       <tr>
+        <td><%= airplane.id %></td>
         <td><%= airplane.name %></td>
         <td><%= airplane.columns %></td>
         <td><%= airplane.rows %></td>

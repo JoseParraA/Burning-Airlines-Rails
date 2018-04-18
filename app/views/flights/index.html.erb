@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Plane</th>
       <th>Origin</th>
       <th>Destination</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @flights.each do |flight| %>
       <tr>
+        <td><%= flight.id %></td>
         <td><%= flight.airplane_id %></td>
         <td><%= flight.origin %></td>
         <td><%= flight.destination %></td>

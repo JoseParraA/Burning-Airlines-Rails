@@ -1196,3 +1196,659 @@ Processing by AirplanesController#index as HTML
 Completed 200 OK in 87ms (Views: 47.5ms | ActiveRecord: 28.0ms)
 
 
+Started GET "/" for ::1 at 2018-04-18 10:28:42 +1000
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FlightsController#show as HTML
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 43ms (ActiveRecord: 13.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Flight with 'id'=):
+  
+app/controllers/flights_controller.rb:67:in `set_flight'
+Started GET "/" for ::1 at 2018-04-18 10:29:02 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 365ms (Views: 350.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2018-04-18 10:31:20 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (9.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 229ms (Views: 196.0ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:31:25 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (2.8ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 94ms (Views: 66.9ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:31:26 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:31:28 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (35.7ms)
+  Rendered flights/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 99ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:31:40 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vOyCoG+elvNgBzXAZLfsfkCwogYR0mdUvSooxkGQkV/PGz4DPtbHH8fVpJRKYXkFSOZMjJdq2GmAg1mk8lrjWQ==", "flight"=>{"airplane_id"=>"1", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'airplane_id' for Flight.):
+  
+app/controllers/flights_controller.rb:27:in `create'
+Started GET "/users" for ::1 at 2018-04-18 10:32:07 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 74ms (Views: 46.6ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/users/new" for ::1 at 2018-04-18 10:32:09 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2018-04-18 10:32:12 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F5dUZmKttoQ9yIhSU1+RISn+NglT15jItbm8/N+8KchkYOjFM+XnaJoaGQZ9iQRaIajYg9VvJ/WIEM2ebHZbzg==", "user"=>{"name"=>"Jose"}, "commit"=>"Create User"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Jose"], ["created_at", "2018-04-18 00:32:12.284948"], ["updated_at", "2018-04-18 00:32:12.284948"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/users/3
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users/3" for ::1 at 2018-04-18 10:32:12 +1000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 10:32:13 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/3" for ::1 at 2018-04-18 10:32:16 +1000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"78e2NkV9U/Gc5V2bGeZm8Zyq8jJUTVC4w8XL+HjahlScMAqVFDUCHTs3zM83MPOKlPwcuNL174X+bLqayxD0Ug==", "id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/users
+Completed 302 Found in 11ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 10:32:16 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 56ms (Views: 45.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 10:32:18 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 46ms (Views: 31.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:32:21 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.4ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/airplanes/new" for ::1 at 2018-04-18 10:32:22 +1000
+Processing by AirplanesController#new as HTML
+  Rendering airplanes/new.html.erb within layouts/application
+  Rendered airplanes/_form.html.erb (4.0ms)
+  Rendered airplanes/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/airplanes" for ::1 at 2018-04-18 10:32:35 +1000
+Processing by AirplanesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZjqhqmwOei1IGKsRSyXl+aNwjx6GJtxcWmPL5LnZu5kVzR0JPUYrwe/KOkVl83CCqyZhlACeY2FnyrqGChPJnw==", "airplane"=>{"name"=>"123", "columns"=>"4", "rows"=>"20"}, "commit"=>"Create Airplane"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "columns", "rows", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "123"], ["columns", "4"], ["rows", 20], ["created_at", "2018-04-18 00:32:35.639814"], ["updated_at", "2018-04-18 00:32:35.639814"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/airplanes/2
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/airplanes/2" for ::1 at 2018-04-18 10:32:35 +1000
+Processing by AirplanesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAirplane Load (1.9ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering airplanes/show.html.erb within layouts/application
+  Rendered airplanes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 37.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:32:42 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.7ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 35.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:32:44 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 10:32:46 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:32:48 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:32:49 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (3.6ms)
+  Rendered flights/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:33:24 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (19.1ms)
+  Rendered flights/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 166ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:33:30 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 45ms (Views: 38.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:33:31 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (3.3ms)
+  Rendered flights/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:33:45 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TB8V3qwkRNd5pkD74mxiEvDP0dBr2CUbQzt4JT/ESXo/6Kl9/WwVO9500a/Muvdp+Jk/Wu1gmiZ+kglHjA47fA==", "flight"=>{"airplane_id"=>"747", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'airplane_id' for Flight.):
+  
+app/controllers/flights_controller.rb:27:in `create'
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "admin") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "admin"], ["created_at", "2018-04-18 00:36:14.885611"], ["updated_at", "2018-04-18 00:36:14.885611"], ["admin", "t"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sam"], ["created_at", "2018-04-18 00:36:14.888783"], ["updated_at", "2018-04-18 00:36:14.888783"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4736050796075119185)[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnsInAirplanes (20180417061753)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "airplanes" ALTER COLUMN "columns" TYPE integer[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4736050796075119185)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4736050796075119185)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnsInAirplanes (20180417061753)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4736050796075119185)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4736050796075119185)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnsInAirplanes (20180417061753)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "airplanes" ALTER COLUMN "columns" TYPE integer[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4736050796075119185)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4736050796075119185)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnsInAirplanes (20180417061753)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "airplanes" ALTER COLUMN "columns" TYPE integer[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4736050796075119185)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4736050796075119185)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangePlaneidColumnInAirplanes (20180417095920)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "flights" RENAME COLUMN "plane_id" TO "airplane_id"[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417095920"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4736050796075119185)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/flights" for ::1 at 2018-04-18 10:45:51 +1000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TB8V3qwkRNd5pkD74mxiEvDP0dBr2CUbQzt4JT/ESXo/6Kl9/WwVO9500a/Muvdp+Jk/Wu1gmiZ+kglHjA47fA==", "flight"=>{"airplane_id"=>"747", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirplane Load (0.9ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 747], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (5.1ms)
+  Rendered flights/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 132ms (Views: 50.2ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:45:54 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aTI4mnzNZVj4bmuXYp4AYm3VfswliGKPTl6WyRipKScaxYQ5LYU0tF+8+sNMSJUZZYOQRqMw3bJz9+erq2NbIQ==", "flight"=>{"airplane_id"=>"747", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirplane Load (0.9ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 747], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (4.5ms)
+  Rendered flights/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 49ms (Views: 39.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:45:59 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aTI4mnzNZVj4bmuXYp4AYm3VfswliGKPTl6WyRipKScaxYQ5LYU0tF+8+sNMSJUZZYOQRqMw3bJz9+erq2NbIQ==", "flight"=>{"airplane_id"=>"747", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirplane Load (0.4ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 747], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (4.8ms)
+  Rendered flights/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 53ms (Views: 46.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:46:01 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 50ms (Views: 44.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:46:06 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 83ms (Views: 72.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:46:07 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (4.2ms)
+  Rendered flights/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:47:50 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YKrhi/wbPaN/qf5ss1zmYkP7cPYaHWE4CodDGaJNe+sTXV0orVNsT9h7bzidinMZS62efJyl3gU3LjJ7EYcJ7Q==", "flight"=>{"airplane_id"=>"1", "origin"=>"Sydney", "destination"=>"Brisbane", "date"=>"2018-04-21"}, "commit"=>"Create Flight"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirplane Load (2.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "origin", "destination", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 1], ["origin", "Sydney"], ["destination", "Brisbane"], ["date", "2018-04-21"], ["created_at", "2018-04-18 00:47:50.770761"], ["updated_at", "2018-04-18 00:47:50.770761"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/flights/1
+Completed 302 Found in 47ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/flights/1" for ::1 at 2018-04-18 10:47:50 +1000
+Processing by FlightsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering flights/show.html.erb within layouts/application
+  Rendered flights/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 43ms (Views: 34.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:47:56 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:55:43 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (1.8ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 108ms (Views: 94.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:56:01 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (1.3ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 70ms (Views: 64.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:56:09 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:56:10 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:56:31 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.5ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:57:03 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (2.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:57:12 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for 1:Integer):
+    18:     <% @flights.each do |flight| %>
+    19:       <tr>
+    20:         <td><%= flight.id %></td>
+    21:         <td><%= flight.airplane_id.name %></td>
+    22:         <td><%= flight.origin %></td>
+    23:         <td><%= flight.destination %></td>
+    24:         <td><%= flight.date %></td>
+  
+app/views/flights/index.html.erb:21:in `block in _app_views_flights_index_html_erb___600114423809373496_70116002348680'
+app/views/flights/index.html.erb:18:in `_app_views_flights_index_html_erb___600114423809373496_70116002348680'
+Started GET "/reservations" for ::1 at 2018-04-18 10:57:35 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 103ms (Views: 76.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 10:57:36 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 39.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/reservations/new" for ::1 at 2018-04-18 10:57:39 +1000
+Processing by ReservationsController#new as HTML
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (7.4ms)
+  Rendered reservations/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 86ms (Views: 60.7ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 10:57:42 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hJzTkLeDV2tFAznIVGKTZ0ienCyOfSb40wA3iHwPu6L3a28z5ssGh+LRqJx6tAYcQMhypgjFmcXuqUbqz8XJpA==", "reservation"=>{"user_id"=>"1", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (3.8ms)
+  Rendered reservations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 65ms (Views: 32.8ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 10:57:45 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8LakpNkDno575vkkwazdBVig3LL40bx3I8qik/1nFDsNWYxwixflp49CrC90CYPHTRt+E1b+czhJlvo/D/uVg==", "reservation"=>{"user_id"=>"6", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (2.5ms)
+  Rendered reservations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 10:57:48 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"skFB33649fn9pP4IlR4B6kuLL30E0dQ1BpuZInTPjXzBtv18L/CkFVp2b1y7yJSRQ93B94Jpawg7MuhAxwX/eg==", "reservation"=>{"user_id"=>"9", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (3.9ms)
+  Rendered reservations/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 43ms (Views: 33.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 10:57:50 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hShFxUOc1otg5KhDl0oklDyR+auTnVqE3Jy541IbVkf23/lmEtSHZ8c2ORe5nLHvNMcXIRUl5bnhNciB4dEkQQ==", "reservation"=>{"user_id"=>"10", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (3.5ms)
+  Rendered reservations/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/reservations" for ::1 at 2018-04-18 10:57:52 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ja2aSPZqTf6HlTbiyMg2tx8V2MPg+uMEJwB3FAln7dT+WibrpyIcEiBHp7bmHqPMF0M2SWZCXDkaqQZ2uq2f0g==", "reservation"=>{"user_id"=>"11", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/_form.html.erb (2.8ms)
+  Rendered reservations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/reservations" for ::1 at 2018-04-18 10:58:07 +1000
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sg6tsKfdDHbgsGrEyeqByJGZrdPVecAhzchWiKxGdgLB+RET9pVdmkdi+5DnPBSzmc9DWVPBfxzwYSfqH4wEBA==", "reservation"=>{"user_id"=>"5", "flight_id"=>"1"}, "commit"=>"Create Reservation"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "flight_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["flight_id", 1], ["created_at", "2018-04-18 00:58:07.059788"], ["updated_at", "2018-04-18 00:58:07.059788"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/reservations/1
+Completed 302 Found in 27ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/reservations/1" for ::1 at 2018-04-18 10:58:07 +1000
+Processing by ReservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/show.html.erb within layouts/application
+  Rendered reservations/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 71ms (Views: 62.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-18 10:58:10 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 10:58:26 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-18 10:58:35 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.5ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 37.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:58:36 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 10:58:37 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2018-04-18 10:58:37 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:58:38 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights/new" for ::1 at 2018-04-18 10:58:40 +1000
+Processing by FlightsController#new as HTML
+  Rendering flights/new.html.erb within layouts/application
+  Rendered flights/_form.html.erb (2.9ms)
+  Rendered flights/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/flights" for ::1 at 2018-04-18 10:59:04 +1000
+Processing by FlightsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lP4jgrAVawUl1f1n5XvHvw7bKLdAZkVFtCVFuKd0SlfnCZ8h4V066YIHbDPLrVLEBo3GPcbe+niJjDTaFL44UQ==", "flight"=>{"airplane_id"=>"2", "origin"=>"Brisbane", "destination"=>"Adelaide", "date"=>"2018-04-22"}, "commit"=>"Create Flight"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAirplane Load (0.8ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "flights" ("airplane_id", "origin", "destination", "date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["airplane_id", 2], ["origin", "Brisbane"], ["destination", "Adelaide"], ["date", "2018-04-22"], ["created_at", "2018-04-18 00:59:04.300546"], ["updated_at", "2018-04-18 00:59:04.300546"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3333/flights/2
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/flights/2" for ::1 at 2018-04-18 10:59:04 +1000
+Processing by FlightsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" WHERE "flights"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering flights/show.html.erb within layouts/application
+  Rendered flights/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-18 10:59:06 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
