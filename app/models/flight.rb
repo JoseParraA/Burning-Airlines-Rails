@@ -3,7 +3,7 @@
 # Table name: flights
 #
 #  id          :integer          not null, primary key
-#  plane_id    :integer
+#  airplane_id :integer
 #  origin      :string
 #  destination :string
 #  date        :text
