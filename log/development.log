@@ -2219,3 +2219,116 @@ Processing by ReservationsController#index as HTML
 Completed 200 OK in 43ms (Views: 30.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2018-04-19 11:20:21 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (22.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (114.1ms)
+Completed 200 OK in 274ms (Views: 232.0ms | ActiveRecord: 22.6ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 11:20:23 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 11:21:31 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 133ms (Views: 111.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 11:25:46 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (1.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 162ms (Views: 143.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-19 11:31:44 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (5.4ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (130.2ms)
+Completed 200 OK in 231ms (Views: 126.2ms | ActiveRecord: 61.4ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-19 11:31:45 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2018-04-19 11:31:45 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 11:31:46 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 11:32:14 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-19 12:21:20 +1000
+  [1m[35m (9.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (2.5ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 117ms (Views: 99.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/flights" for ::1 at 2018-04-19 12:21:21 +1000
+Processing by FlightsController#index as HTML
+  Rendering flights/index.html.erb within layouts/application
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 60ms (Views: 54.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for ::1 at 2018-04-19 12:21:22 +1000
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reservations" for ::1 at 2018-04-19 12:21:22 +1000
+Processing by ReservationsController#index as HTML
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  Rendered reservations/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/airplanes" for ::1 at 2018-04-19 12:21:24 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 0.6ms)
+
+
